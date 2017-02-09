@@ -22,17 +22,15 @@ module.exports = {
 			Return 'Arithmetic' if numlist is solely arithmetic.
 			Return 'Geometric' if numlist is solely geometric.
 		*/
-		if (module.compute.isArithmetic(numlist.slice(1), numlist[1] - numlist[0])) {
-			if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
+		if (this.isArithmetic(numlist.slice(1), numlist[1] - numlist[0])) {
+			if (this.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
 				return 'Arithmetic and Geometric';
 			} else return 'Arithmetic';
-		} else if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
+		} else if (this.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
 			return 'Geometric';
 		} else return -1;
-	}
-}
+	},
 
-module.compute = {
 	// This function checks if a valid sequence is arithmetic.
 	isArithmetic: function(numlist, diff) {
 		if (numlist[1] - numlist[0] === diff) {
