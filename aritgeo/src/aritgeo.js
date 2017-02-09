@@ -20,7 +20,7 @@ module.exports = {
 			} else return 'Arithmetic';
 		} else if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
 			return 'Geometric';
-		}
+		} else return -1;
 	}
 }
 
