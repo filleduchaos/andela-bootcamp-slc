@@ -16,6 +16,8 @@ module.exports = {
 
 		if (module.compute.isArithmetic(numlist.slice(1), numlist[1] - numlist[0])) {
 			return 'Arithmetic';
+		} else if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
+			return 'Geometric';
 		}
 	}
 }
@@ -26,6 +28,14 @@ module.compute = {
 			if (numlist.length === 2) {
 				return true;
 			} else return true && this.isArithmetic(numlist.slice(1), numlist[1] - numlist[0]);	
+		} else return false;
+	},
+
+	isGeometric: function(numlist, ratio) {
+		if (numlist[1] / numlist[0] === ratio) {
+			if (numlist.length === 2) {
+				return true;
+			} else return true && this.isGeometric(numlist.slice(1), numlist[1] / numlist[0]);	
 		} else return false;
 	}
 }
