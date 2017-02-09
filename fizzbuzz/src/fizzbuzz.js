@@ -8,6 +8,6 @@ module.exports = {
 			return 'Fizz';
 		} else if (num%5 === 0) {
 			return 'Buzz';
-		}
+		} else return num;
 	}
 }
