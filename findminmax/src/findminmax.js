@@ -6,6 +6,10 @@ module.exports = {
 		if (numlist.length === 0) {
 			return [];
 		}
+
+		if (typeof numlist[0] !== 'number') {
+			return null;
+		}
 		
 		numlist.sort( function (a,b) {return a - b} );
 
