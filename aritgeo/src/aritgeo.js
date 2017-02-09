@@ -15,7 +15,9 @@ module.exports = {
 		}
 
 		if (module.compute.isArithmetic(numlist.slice(1), numlist[1] - numlist[0])) {
-			return 'Arithmetic';
+			if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
+				return 'Arithmetic and Geometric';
+			} else return 'Arithmetic';
 		} else if (module.compute.isGeometric(numlist.slice(1), numlist[1] / numlist[0])) {
 			return 'Geometric';
 		}
