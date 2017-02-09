@@ -5,6 +5,9 @@ module.exports = {
 	findMinMax: function(numlist) {
 		numlist.sort( function (a,b) {return a - b} );
 
-		return [ numlist[0], numlist[numlist.length - 1] ];
+		if (numlist[0] == numlist[numlist.length - 1]) {
+			return [numlist[0]];
+		}
+		else return [ numlist[0], numlist[numlist.length - 1] ];
 	}
 }
